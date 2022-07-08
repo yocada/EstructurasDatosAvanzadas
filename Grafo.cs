@@ -9,8 +9,8 @@ namespace EstructurasDatosAvanzadas
     public abstract class Grafo<T>
     {
         protected int[,] matrizAdyacencia;
-        protected List<T> vertices;
-        protected int size;
+        public List<T> vertices { get; protected set; }
+        public int size { get; set; }
 
         public Grafo()
         {
@@ -74,7 +74,7 @@ namespace EstructurasDatosAvanzadas
             var posU = vertices.IndexOf(u);
             var posV = vertices.IndexOf(v);
             if (posU == -1 || posV == -1) return 0;
-            return matrizAdyacencia[posU, posV] = 0;
+            return matrizAdyacencia[posU, posV];
         }
 
         private void ampliaMatriz(int incremento)
