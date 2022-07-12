@@ -10,7 +10,7 @@ namespace EstructurasDatosAvanzadas
     {
         protected int[,] matrizAdyacencia;
         public List<T> vertices { get; protected set; }
-        public int size { get; set; }
+        public int size { get; protected set; }
 
         public Grafo()
         {
@@ -41,7 +41,7 @@ namespace EstructurasDatosAvanzadas
         {
             var posV = vertices.IndexOf(v);
             if (posV == -1) return;
-            reduceMatriz(1,posV);
+            reduceMatriz(posV);
             vertices.RemoveAt(posV);
         }
 
@@ -106,9 +106,9 @@ namespace EstructurasDatosAvanzadas
             size += incremento;
         }
 
-        private void reduceMatriz(int decremento, int indice)
+        private void reduceMatriz(int indice)
         {
-            var newSize = size - decremento;
+            var newSize = size - 1;
             var matrizCopia = new int[newSize, newSize];
             for (int i = 0; i < newSize; i++)
             {
@@ -125,7 +125,7 @@ namespace EstructurasDatosAvanzadas
                     matrizAdyacencia[i, j] = matrizCopia[i, j];
                 }
             }
-            size -= decremento;
+            size -= 1;
         }
 
     }
