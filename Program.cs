@@ -10,6 +10,7 @@ namespace EstructurasDatosAvanzadas
     {
         static void Main(string[] args)
         {
+            #region Test grafos
             var grafoNoDirigido = new GrafoNoDirigido<string>();
             grafoNoDirigido.addVertice("1");
             grafoNoDirigido.addVertice("2");
@@ -66,6 +67,34 @@ namespace EstructurasDatosAvanzadas
                 System.Diagnostics.Debug.WriteLine("Adyacentes de " + i.ToString() + ":");
                 grafoDirigido.adyacentes(i.ToString()).ForEach(x => System.Diagnostics.Debug.WriteLine(x.ToString()));
             }
+            #endregion
+            #region Test montículos
+            var m = new Monticulo<int>();
+            System.Diagnostics.Debug.WriteLine(m.monticuloVacio());
+            try
+            {
+                System.Diagnostics.Debug.WriteLine(m.primero());
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+
+            m.insertar(5);
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            m.insertar(4);
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            m.insertar(3);
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            m.insertar(6);
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            m.insertar(1);
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            System.Diagnostics.Debug.WriteLine(m.obtenerCima());
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            System.Diagnostics.Debug.WriteLine(m.obtenerCima());
+            System.Diagnostics.Debug.WriteLine(m.primero());
+            #endregion
         }
     }
 }

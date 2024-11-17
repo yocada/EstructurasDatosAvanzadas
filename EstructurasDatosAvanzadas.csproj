@@ -46,6 +46,7 @@
     <Compile Include="Grafo.cs" />
     <Compile Include="GrafoDirigido.cs" />
     <Compile Include="GrafoNoDirigido.cs" />
+    <Compile Include="Monticulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
